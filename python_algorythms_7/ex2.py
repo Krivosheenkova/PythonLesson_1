@@ -4,10 +4,10 @@
 и отсортированный массивы.
 """
 
-from random import randint
+from random
 
 size = 10
-a = [randint(0, 50) for _ in range(size)]
+a = [round(random.random()*50, 2) for _ in range(size)]
 print(f'Исходный массив: {a}')
 
 
