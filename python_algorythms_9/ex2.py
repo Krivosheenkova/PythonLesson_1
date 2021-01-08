@@ -23,20 +23,20 @@ def huffman_encode(string):
     hash_table = []
     for ch, frq in Counter(string).items():
         hash_table.append((frq, len(hash_table), Leaf(ch)))
-        print(hash_table)
+        # print(hash_table)
     heapq.heapify(hash_table)
     count = len(hash_table)
     while len(hash_table) > 1:
         frq1, _count1, left = heapq.heappop(hash_table)
         frq2, _count2, right = heapq.heappop(hash_table)
-        print(f'frq1 = {frq1}, _count1 = {_count1}, left = {left}')
-        print(f'frq2 = {frq2}, _count2 = {_count2}, right = {right}')
+        # print(f'frq1 = {frq1}, _count1 = {_count1}, left = {left}')
+        # print(f'frq2 = {frq2}, _count2 = {_count2}, right = {right}')
         heapq.heappush(hash_table, (frq1 + frq2, count, Node1(left, right)))
         count += 1
     code = {}
     if hash_table:
         [(_frq, _count, root)] = hash_table
-        print(f'[(_frq, _count, root)] = {[(_frq, _count, root)]}')
+        # print(f'[(_frq, _count, root)] = {[(_frq, _count, root)]}')
         root.walk(code, '')
 
     encoded_str = ''
