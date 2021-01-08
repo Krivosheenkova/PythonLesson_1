@@ -17,7 +17,7 @@ def sub_count(string):
             # print(string[i:k])
             hstr = sha1(string[i:k].encode('utf-8')).hexdigest()
             subs.add(hstr)
-    return f'{len(subs) - 1} different substrings were found in string {string}'
+    return f'{len(subs)} different substrings were found in string {string}'
 
 
 s = input('Enter any string using latin letters: ').lower()
